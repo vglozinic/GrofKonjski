@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="${request.locale_name}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="pyramid web application">
+    <meta name="author" content="Pylons Project">
+    <link rel="shortcut icon" href="${request.static_url('grof_konjski:static/pyramid-16x16.png')}">
+
+    <title>Cookiecutter ZODB project for the Pyramid Web Framework</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this scaffold -->
+    <link href="${request.static_url('grof_konjski:static/theme.css')}" rel="stylesheet">
+
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+    <script src="${request.static_url('grof_konjski:static/script.js')}"></script>
+  </head>
+
+  <body>
+
+    <div class="starter-template">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="logo img-responsive" src="${request.static_url('grof_konjski:static/pyramid.png')}" alt="pyramid web framework">
+          </div>
+          <div class="col-md-10">
+            <div class="content">
+              <h1><span class="font-semi-bold">Pyramid</span> <span class="smaller">TBP Projekt</span></h1>
+              <p class="lead">Welcome to <span class="font-normal">${project}</span>, a&nbsp;Pyramid application generated&nbsp;by<br><span class="font-normal">Cookiecutter</span>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="links">
+            <ul>
+              <li><i class="glyphicon glyphicons-history">Port engine RPM: <span id="port_engine_rpm">${port_engine_rpm}</span></i></li>
+              <br/>
+              <li><i class="glyphicon glyphicons-temperature">Port engine temp: <span id="port_engine_temp">${port_engine_temp}</span> C</i></li>
+              <br/>
+              <li><i class="glyphicon glyphicon-tint">Port engine pressure: <span id="port_engine_pressure">${port_engine_pressure}</span> bar</i></li>
+              <br/>
+              <li><i class="glyphicon glyphicons-history">Starboard engine RPM: <span id="starboard_engine_rpm">${starboard_engine_rpm}</span></i></li>
+              <br/>
+              <li><i class="glyphicon glyphicons-temperature">Starboard engine temp: <span id="starboard_engine_temp">${starboard_engine_temp}</span> C</i></li>
+              <br/>
+              <li><i class="glyphicon glyphicon-tint">Starboard engine pressure: <span id="starboard_engine_pressure">${starboard_engine_pressure}</span> bar</i></li>
+              <br/>
+              <button id="starboard_engine_button" data-state="true">ON/OFF (starboard)</button>
+              <button id="port_engine_button" data-state="true">ON/OFF (port)</button>
+              <br/>
+              <li><i class="glyphicon">Water pump: <span id="water_pump">${water_pump}</span></i></li>
+              <br/>
+              <li><i class="glyphicon">Waste pump: <span id="waste_pump">${waste_pump}</span></i></li>
+              <br/>
+              <button id="waste_pump_button" data-state="true">ON/OFF (waste)</button>
+              <button id="water_pump_button" data-state="true">ON/OFF (water)</button>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="copyright">
+            Copyright &copy; Vedran Gložinić
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//oss.maxcdn.com/libs/jquery/1.10.2/jquery.min.js" integrity="sha384-aBL3Lzi6c9LNDGvpHkZrrm3ZVsIwohDD7CDozL0pk8FwCrfmV7H9w8j3L7ikEv6h" crossorigin="anonymous"></script>
+    <script src="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script>
+  </body>
+</html>
