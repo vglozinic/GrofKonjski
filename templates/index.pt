@@ -26,50 +26,45 @@
   <body>
 
     <div class="starter-template">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2">
-            <img class="logo img-responsive" src="${request.static_url('grof_konjski:static/pyramid.png')}" alt="pyramid web framework">
-          </div>
-          <div class="col-md-10">
-            <div class="content">
-              <h1><span class="font-semi-bold">Pyramid</span> <span class="smaller">TBP Projekt</span></h1>
-              <p class="lead">Welcome to <span class="font-normal">${project}</span>, a&nbsp;Pyramid application generated&nbsp;by<br><span class="font-normal">Cookiecutter</span>.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="links">
-            <ul>
-              <li><i class="glyphicon glyphicons-history">Port engine RPM: <span id="port_engine_rpm">${port_engine_rpm}</span></i></li>
-              <br/>
-              <li><i class="glyphicon glyphicons-temperature">Port engine temp: <span id="port_engine_temp">${port_engine_temp}</span> C</i></li>
-              <br/>
-              <li><i class="glyphicon glyphicon-tint">Port engine pressure: <span id="port_engine_pressure">${port_engine_pressure}</span> bar</i></li>
-              <br/>
-              <li><i class="glyphicon glyphicons-history">Starboard engine RPM: <span id="starboard_engine_rpm">${starboard_engine_rpm}</span></i></li>
-              <br/>
-              <li><i class="glyphicon glyphicons-temperature">Starboard engine temp: <span id="starboard_engine_temp">${starboard_engine_temp}</span> C</i></li>
-              <br/>
-              <li><i class="glyphicon glyphicon-tint">Starboard engine pressure: <span id="starboard_engine_pressure">${starboard_engine_pressure}</span> bar</i></li>
-              <br/>
-              <button id="starboard_engine_button" data-state="true">ON/OFF (starboard)</button>
-              <button id="port_engine_button" data-state="true">ON/OFF (port)</button>
-              <br/>
-              <li><i class="glyphicon">Water pump: <span id="water_pump">${water_pump}</span></i></li>
-              <br/>
-              <li><i class="glyphicon">Waste pump: <span id="waste_pump">${waste_pump}</span></i></li>
-              <br/>
-              <button id="waste_pump_button" data-state="true">ON/OFF (waste)</button>
-              <button id="water_pump_button" data-state="true">ON/OFF (water)</button>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="copyright">
-            Copyright &copy; Vedran Gložinić
-          </div>
-        </div>
+      <div class="links">
+        <ul>
+          <li><i class="glyphicon glyphicons-history">Port engine status: <span id="port_engine_status">${port_engine_status}</span></i></li>
+          <br/>
+          <li><i class="glyphicon glyphicons-history">Port engine RPM: <span id="port_engine_rpm">${port_engine_rpm}</span></i></li>
+          <br/>
+          <li><i class="glyphicon glyphicons-temperature">Port engine temp: <span id="port_engine_temp">${port_engine_temp}</span> C</i></li>
+          <br/>
+          <li><i class="glyphicon glyphicon-tint">Port engine pressure: <span id="port_engine_pressure">${port_engine_pressure}</span> bar</i></li>
+          <br/>
+          <li><i class="glyphicon glyphicons-history">Starboard engine status: <span id="starboard_engine_status">${starboard_engine_status}</span></i></li>
+          <br/>
+          <li><i class="glyphicon glyphicons-history">Starboard engine RPM: <span id="starboard_engine_rpm">${starboard_engine_rpm}</span></i></li>
+          <br/>
+          <li><i class="glyphicon glyphicons-temperature">Starboard engine temp: <span id="starboard_engine_temp">${starboard_engine_temp}</span> C</i></li>
+          <br/>
+          <li><i class="glyphicon glyphicon-tint">Starboard engine pressure: <span id="starboard_engine_pressure">${starboard_engine_pressure}</span> bar</i></li>
+          <br/>
+          <button id="starboard_engine_button">ON/OFF (starboard)</button>
+          <button id="port_engine_button">ON/OFF (port)</button>
+          <br/>
+          <li><i class="glyphicon">Water pump: <span id="water_pump_status">${water_pump}</span></i></li>
+          <br/>
+          <li><i class="glyphicon">Waste pump: <span id="waste_pump_status">${waste_pump}</span></i></li>
+          <br/>
+          <button id="waste_pump_button">ON/OFF (waste)</button>
+          <button id="water_pump_button">ON/OFF (water)</button>
+          <br/>
+          <li><i class="glyphicon glyphicons-history">Port generator status: <span id="port_generator_status">${port_generator_status}</span></i></li>
+          <br/>
+          <li><i class="glyphicon glyphicon-tint">Port generator voltage: <span id="port_generator_voltage">${port_generator_voltage}</span> volt</i></li>
+          <br/>
+          <li><i class="glyphicon glyphicons-temperature">Starboard generator status: <span id="starboard_generator_status">${starboard_generator_status}</span></i></li>
+          <br/>
+          <li><i class="glyphicon glyphicon-tint">Starboard generator voltage: <span id="starboard_generator_voltage">${starboard_generator_voltage}</span> volt</i></li>
+          <br/>
+          <button id="starboard_generator_button">ON/OFF (starboard)</button>
+          <button id="port_generator_button">ON/OFF (port)</button>
+        </ul>
       </div>
     </div>
 

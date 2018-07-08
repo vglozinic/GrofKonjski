@@ -5,6 +5,12 @@ body {
   color: #ffffff;
   background: #bc2131;
 }
+#starboard_generator_button{
+  background-image: url("switch_on.png");
+}
+#port_generator_button{
+  background-image: url("switch_off.png");
+}
 h1,
 h2,
 h3,
@@ -48,7 +54,7 @@ p {
   color: #ffffff;
 }
 .starter-template .links {
-  float: right;
+  float: left;
   right: 0;
   margin-top: 125px;
 }
