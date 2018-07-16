@@ -6,73 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="pyramid web application">
     <meta name="author" content="Pylons Project">
-    <link rel="shortcut icon" href="${request.static_url('grof_konjski:static/pyramid-16x16.png')}">
-
-    <title>Cookiecutter ZODB project for the Pyramid Web Framework</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this scaffold -->
+    <link rel="shortcut icon" href="${request.static_url('grof_konjski:static/icon.png')}">
+    <title>Ship Engine Room Control Panel</title>
+    
     <link href="${request.static_url('grof_konjski:static/theme.css')}" rel="stylesheet">
-
-    <script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="${request.static_url('grof_konjski:static/script.js')}"></script>
+    <script src="https://cdn.rawgit.com/Mikhus/canvas-gauges/gh-pages/download/2.1.5/radial/gauge.min.js"></script>
   </head>
 
   <body>
+    <div id="container">
+      <div id="panel">
 
-    <div class="starter-template">
-      <div class="links">
-        <ul>
-          <li><i class="glyphicon glyphicons-history">Port engine status: <span id="port_engine_status">${port_engine_status}</span></i></li>
-          <br/>
-          <li><i class="glyphicon glyphicons-history">Port engine RPM: <span id="port_engine_rpm">${port_engine_rpm}</span></i></li>
-          <br/>
-          <li><i class="glyphicon glyphicons-temperature">Port engine temp: <span id="port_engine_temp">${port_engine_temp}</span> C</i></li>
-          <br/>
-          <li><i class="glyphicon glyphicon-tint">Port engine pressure: <span id="port_engine_pressure">${port_engine_pressure}</span> bar</i></li>
-          <br/>
-          <li><i class="glyphicon glyphicons-history">Starboard engine status: <span id="starboard_engine_status">${starboard_engine_status}</span></i></li>
-          <br/>
-          <li><i class="glyphicon glyphicons-history">Starboard engine RPM: <span id="starboard_engine_rpm">${starboard_engine_rpm}</span></i></li>
-          <br/>
-          <li><i class="glyphicon glyphicons-temperature">Starboard engine temp: <span id="starboard_engine_temp">${starboard_engine_temp}</span> C</i></li>
-          <br/>
-          <li><i class="glyphicon glyphicon-tint">Starboard engine pressure: <span id="starboard_engine_pressure">${starboard_engine_pressure}</span> bar</i></li>
-          <br/>
-          <button id="starboard_engine_button">ON/OFF (starboard)</button>
-          <button id="port_engine_button">ON/OFF (port)</button>
-          <br/>
-          <li><i class="glyphicon">Water pump: <span id="water_pump_status">${water_pump}</span></i></li>
-          <br/>
-          <li><i class="glyphicon">Waste pump: <span id="waste_pump_status">${waste_pump}</span></i></li>
-          <br/>
-          <button id="waste_pump_button">ON/OFF (waste)</button>
-          <button id="water_pump_button">ON/OFF (water)</button>
-          <br/>
-          <li><i class="glyphicon glyphicons-history">Port generator status: <span id="port_generator_status">${port_generator_status}</span></i></li>
-          <br/>
-          <li><i class="glyphicon glyphicon-tint">Port generator voltage: <span id="port_generator_voltage">${port_generator_voltage}</span> volt</i></li>
-          <br/>
-          <li><i class="glyphicon glyphicons-temperature">Starboard generator status: <span id="starboard_generator_status">${starboard_generator_status}</span></i></li>
-          <br/>
-          <li><i class="glyphicon glyphicon-tint">Starboard generator voltage: <span id="starboard_generator_voltage">${starboard_generator_voltage}</span> volt</i></li>
-          <br/>
-          <button id="starboard_generator_button">ON/OFF (starboard)</button>
-          <button id="port_generator_button">ON/OFF (port)</button>
-        </ul>
+        <div id="engines">
+          <div class="controls">
+            <div class="nameplate" id="port_engine_name_plate"></div>
+            <div class="switch"><button id="port_engine_switch"></div>
+            <div class="lamp" id="port_engine_lamp"></div>
+          </div>
+
+          <div class="gauge" id="port_engine_rpm">
+            <canvas id="port_engine_rpm_gauge"></canvas>
+          </div>
+          <div class="controls">
+            <div class="clock" id="port_engine_temp">
+              <canvas id="port_engine_temp_gauge"></canvas>
+            </div>
+            <div class="clock" id="port_engine_pressure">
+              <canvas id="port_engine_pressure_gauge"></canvas>
+            </div>
+          </div>
+          <div class="controls">
+            <div class="clock" id="starboard_engine_temp">
+              <canvas id="starboard_engine_temp_gauge"></canvas>
+            </div>
+            <div class="clock" id="starboard_engine_pressure">
+              <canvas id="starboard_engine_pressure_gauge"></canvas>
+            </div>
+          </div>
+          <div class="gauge" id="starboard_engine_rpm">
+            <canvas id="starboard_engine_rpm_gauge"></canvas>
+          </div>
+
+          <div class="controls">  
+            <div class="nameplate" id="starboard_engine_name_plate"></div>
+            <div class="switch"><button id="starboard_engine_switch"></div>
+            <div class="lamp" id="starboard_engine_lamp"></div>
+          </div>
+        </div>
+
+        <div id="generators">
+          <div class="controls">
+            <div class="nameplate" id="port_generator_name_plate"></div>
+            <div class="switch"><button id="port_generator_switch"></div>
+            <div class="lamp" id="port_generator_lamp"></div>
+          </div>
+
+          <div class="gauge" id="port_generator">
+            <canvas id="port_generator_voltage_gauge"></canvas>
+            <img id="port_generator_gauge_overlay" src="static/img/voltmeter.png"/>
+          </div>
+
+          <div class="controls">
+            <div class="nameplate" id="water_pump_name_plate"></div>
+            <div class="switch"><button id="water_pump_switch"></div>
+            <div class="lamp" id="water_pump_lamp"></div>
+          </div>
+
+          <div class="controls">
+            <div class="nameplate" id="waste_pump_name_plate"></div>
+            <div class="switch"><button id="waste_pump_switch"></div>
+            <div class="lamp" id="waste_pump_lamp"></div>
+          </div>
+
+          <div class="gauge" id="starboard_generator">
+            <canvas id="starboard_generator_voltage_gauge"></canvas>
+            <img id="starboard_generator_gauge_overlay" src="static/img/voltmeter.png"/>
+          </div>
+
+          <div class="controls">
+            <div class="nameplate" id="starboard_generator_name_plate"></div>
+            <div class="switch"><button id="starboard_generator_switch"></div>
+            <div class="lamp" id="starboard_generator_lamp"></div>
+          </div>
+        </div>
+
       </div>
     </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="//oss.maxcdn.com/libs/jquery/1.10.2/jquery.min.js" integrity="sha384-aBL3Lzi6c9LNDGvpHkZrrm3ZVsIwohDD7CDozL0pk8FwCrfmV7H9w8j3L7ikEv6h" crossorigin="anonymous"></script>
-    <script src="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js" integrity="sha384-s1ITto93iSMDxlp/79qhWHi+LsIi9Gx6yL+cOKDuymvihkfol83TYbLbOw+W/wv4" crossorigin="anonymous"></script>
   </body>
 </html>

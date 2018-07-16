@@ -58,7 +58,7 @@ class Pumpa(Stroj):
         super(Pumpa, self).__init__(naziv)
         self.naziv = naziv
 
-class MyModel(PersistentMapping):
+class Strojarnica(PersistentMapping):
     __parent__ = __name__ = None
     port_engine = Motor("Port Engine")
     starboard_engine = Motor("Starboard Engine")
@@ -69,6 +69,6 @@ class MyModel(PersistentMapping):
 
 def appmaker(zodb_root):
     if 'app_root' not in zodb_root:
-        app_root = MyModel()
+        app_root = Strojarnica()
         zodb_root['app_root'] = app_root
     return zodb_root['app_root']

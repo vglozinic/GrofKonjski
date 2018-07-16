@@ -1,160 +1,134 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
 body {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  color: #ffffff;
-  background: #bc2131;
+  background-image: url("img/background.png");
+  background-size: cover;
+  font-family: Impact, Haettenschweiler, Charcoal, sans-serif;
+  font-weight: bold;
+  color: #222222;
+  margin: 0px;
 }
-#starboard_generator_button{
-  background-image: url("switch_on.png");
+
+div{
+  margin: 0px;
+  padding: 0px;
 }
-#port_generator_button{
-  background-image: url("switch_off.png");
+
+button{
+  background-color: transparent;
+  background-image: url("img/switch_off.png");
+  height: 180px;
+  width: 60px;
+  margin: 0px;
+  border: 0px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-}
-p {
-  font-weight: 300;
-}
-.font-normal {
-  font-weight: 400;
-}
-.font-semi-bold {
-  font-weight: 600;
-}
-.font-bold {
-  font-weight: 700;
-}
-.starter-template {
-  margin-top: 250px;
-}
-.starter-template .content {
-  margin-left: 10px;
-}
-.starter-template .content h1 {
-  margin-top: 10px;
-  font-size: 60px;
-}
-.starter-template .content h1 .smaller {
-  font-size: 40px;
-  color: #f2b7bd;
-}
-.starter-template .content .lead {
-  font-size: 25px;
-  color: #f2b7bd;
-}
-.starter-template .content .lead .font-normal {
-  color: #ffffff;
-}
-.starter-template .links {
+
+.controls{
   float: left;
-  right: 0;
-  margin-top: 125px;
+  height: 320px;
+  width: 160px;
 }
-.starter-template .links ul {
-  display: block;
-  padding: 0;
-  margin: 0;
+
+.clock{
+  display: inline-block;
+  width: 160px;
+  height: 160px;
 }
-.starter-template .links ul li {
-  list-style: none;
-  display: inline;
-  margin: 0 10px;
+
+.gauge{
+  float: left;
+  height: 320px;
+  width: 320px;
 }
-.starter-template .links ul li:first-child {
-  margin-left: 0;
+
+.lamp{
+  background-image: url("img/light_off.png");
+  height: 60px;
+  width: 60px;
+  margin: auto;
 }
-.starter-template .links ul li:last-child {
-  margin-right: 0;
+
+.nameplate{
+  width: 160px;
+  height: 80px;
 }
-.starter-template .links ul li.current-version {
-  color: #f2b7bd;
-  font-weight: 400;
+
+.switch{
+  display: inline-block;
+  height: 180px;
 }
-.starter-template .links ul li a, a {
-  color: #f2b7bd;
-  text-decoration: underline;
+
+#container{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.starter-template .links ul li a:hover, a:hover {
-  color: #ffffff;
-  text-decoration: underline;
+
+#panel{
+  background-image: url("img/panel.png");
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding-top: 100px;
+  width: 1480px;
+  height: 840px;
+  margin: auto;
 }
-.starter-template .links ul li .icon-muted {
-  color: #eb8b95;
-  margin-right: 5px;
+
+#engines{
+  width: 1280px;
+  height: 320px;
+  margin: auto;
 }
-.starter-template .links ul li:hover .icon-muted {
-  color: #ffffff;
+
+#generators{
+  width: 1280px;
+  height: 320px;
+  margin:auto;
 }
-.starter-template .copyright {
-  margin-top: 10px;
-  font-size: 0.9em;
-  color: #f2b7bd;
-  text-transform: lowercase;
-  float: right;
-  right: 0;
+
+#port_engine_name_plate{
+  background-image: url("img/port_engine_name_plate.png");
 }
-@media (max-width: 1199px) {
-  .starter-template .content h1 {
-    font-size: 45px;
-  }
-  .starter-template .content h1 .smaller {
-    font-size: 30px;
-  }
-  .starter-template .content .lead {
-    font-size: 20px;
-  }
+
+#starboard_engine_name_plate{
+  background-image: url("img/starboard_engine_name_plate.png");
 }
-@media (max-width: 991px) {
-  .starter-template {
-    margin-top: 0;
-  }
-  .starter-template .logo {
-    margin: 40px auto;
-  }
-  .starter-template .content {
-    margin-left: 0;
-    text-align: center;
-  }
-  .starter-template .content h1 {
-    margin-bottom: 20px;
-  }
-  .starter-template .links {
-    float: none;
-    text-align: center;
-    margin-top: 60px;
-  }
-  .starter-template .copyright {
-    float: none;
-    text-align: center;
-  }
+
+#water_pump_name_plate{
+  background-image: url("img/water_pump_name_plate.png");
 }
-@media (max-width: 767px) {
-  .starter-template .content h1 .smaller {
-    font-size: 25px;
-    display: block;
-  }
-  .starter-template .content .lead {
-    font-size: 16px;
-  }
-  .starter-template .links {
-    margin-top: 40px;
-  }
-  .starter-template .links ul li {
-    display: block;
-    margin: 0;
-  }
-  .starter-template .links ul li .icon-muted {
-    display: none;
-  }
-  .starter-template .copyright {
-    margin-top: 20px;
-  }
+
+#waste_pump_name_plate{
+  background-image: url("img/waste_pump_name_plate.png");
+}
+
+#port_generator_name_plate{
+  background-image: url("img/port_generator_name_plate.png");
+}
+
+#starboard_generator_name_plate{
+  background-image: url("img/starboard_generator_name_plate.png");
+}
+
+#port_generator_voltage_gauge{
+  position: absolute;
+  margin-top: 20px;
+  top: 0px;
+  left: 20px;
+  clip-path: polygon(60% 0%, 90% 10%, 90% 20%, 60% 50%, 40% 50%, 10% 20%, 10% 10%, 40% 0%);
+}
+
+#starboard_generator_voltage_gauge{
+  position: absolute;
+  margin-top: 20px;
+  top: 0px;
+  left: 20px;
+  clip-path: polygon(60% 0%, 90% 10%, 90% 20%, 60% 50%, 40% 50%, 10% 20%, 10% 10%, 40% 0%);
+}
+
+#port_generator{
+  position: relative;
+}
+
+#starboard_generator{
+  position: relative;
 }
